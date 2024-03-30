@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: dotnet-banking-app
+  namespace: namespace-workflow-1711800892540
+spec:
+  type: LoadBalancer
+  selector:
+    app: dotnet-banking-app
+  ports:
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000

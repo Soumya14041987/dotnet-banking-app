@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dotnet-banking-app
+  labels:
+    app: dotnet-banking-app
+  namespace: namespace-workflow-1711800892540
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dotnet-banking-app
+  template:
+    metadata:
+      labels:
+        app: dotnet-banking-app
+    spec:
+      containers:
+        - name: dotnet-banking-app
+          image: acrworkflow1711800892540.azurecr.io/image-workflow-1711800892540:latest
+          ports:
+            - containerPort: 5000
